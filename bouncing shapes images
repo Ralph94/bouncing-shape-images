@@ -1,0 +1,90 @@
+import turtle
+import random # helps to make any of your functions random
+import time
+#Screen Setup
+ms = turtle.Screen()
+ms.bgcolor("white")
+ms.title("Bouncing shape images by Rafa94")
+ms.tracer(0)
+time.sleep(2) # helps slows down the speed
+
+
+balls = []
+for _ in range(35): # shows how many balls we have in our game
+    balls.append(turtle.Turtle())
+
+
+colors =["blue", "green", "yellow", "pink", "red", "orange", "white", "brown" ,"black"]
+shapes = ["triangle", "circle", "square"]
+
+
+
+
+
+
+#player
+for ball in balls: # all the functions in the ball from shape to color etc
+    ball.shape (random.choice(shapes))
+    ball.color(random.choice(colors))
+    ball.penup()
+    ball.shapesize(1.5)
+    ball.speed(1)
+    x = random.randint(-290, 300)
+    y = random.randint(200, 400)
+    ball.goto(x, y)
+    ball.dy = 0
+    ball.dx = random.randint(-3, 3)
+    ball.da = random.randint(-5, 5)
+
+
+
+
+gravity = 0.1
+
+while True:
+    ms.update()
+
+    for ball in balls:
+        ball.rt(ball.da)
+        ball.dy -= gravity
+        ball.sety(ball.ycor() + ball.dy)
+
+        ball.setx(ball.xcor() + ball.dx)
+
+        # Check for a wall collision
+        if ball.xcor() > 300:
+            ball.dx *= -1
+            ball.da *= -1
+
+        if ball.xcor() < -300:
+            ball.dx *= -1
+            ball.da *= -1
+
+        # check for a bounce
+        if ball.ycor() < -300:
+            ball.sety(-300)
+            ball.dy *= -1
+            ball.da *= -1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ms.mainloop()
