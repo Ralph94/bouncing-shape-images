@@ -14,7 +14,7 @@ for _ in range(35): # shows how many balls we have in our game
     balls.append(turtle.Turtle())
 
 
-colors =["blue", "green", "yellow", "pink", "red", "orange", "white", "brown" ,"black"]
+colors =["blue", "green", "yellow", "pink", "red", "orange", "white", "brown" ,"black"] # add more colors
 shapes = ["triangle", "circle", "square"]
 
 
