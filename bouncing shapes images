@@ -4,7 +4,7 @@ import time
 #Screen Setup
 ms = turtle.Screen()
 ms.bgcolor("white")
-ms.title("Bouncing shape images by Rafa94")
+ms.title("Bouncing shape images! by Rafa94")
 ms.tracer(0)
 time.sleep(2) # helps slows down the speed
 
